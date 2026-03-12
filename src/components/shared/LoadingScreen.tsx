@@ -16,9 +16,6 @@ export default function LoadingScreen() {
   return (
     <div className="loading-screen fixed inset-0 z-[9999] flex items-center justify-center bg-white">
       <div className="relative flex flex-col items-center gap-6">
-        {/* Spinning ring */}
-        <div className="loading-ring absolute w-32 h-32 rounded-full border-2 border-transparent border-t-[#c5a059] border-r-[#c5a059]" />
-        
         {/* Logo */}
         <div className="loading-logo">
           <Image
