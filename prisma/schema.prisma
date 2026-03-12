@@ -1,13 +1,146 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
-generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
-}
-
 datasource db {
   provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String
+  role          Role      @default(ADMIN)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+enum Role {
+  ADMIN
+}
+
+model Category {
+  id            String    @id @default(cuid())
+  name          String
+  slug          String    @unique
+  description   String?
+  image         String?
+  order         Int       @default(0)
+  isActive      Boolean   @default(true)
+  subCategories SubCategory[]
+  products      Product[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model SubCategory {
+  id            String    @id @default(cuid())
+  name          String
+  slug          String    @unique
+  description   String?
+  image         String?
+  order         Int       @default(0)
+  isActive      Boolean   @default(true)
+  categoryId    String
+  category      Category  @relation(fields: [categoryId], references: [id])
+  products      Product[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Product {
+  id               String    @id @default(cuid())
+  name             String
+  slug             String    @unique
+  description      String    @db.Text
+  shortDescription String?   @db.Text
+  images           String[]
+  categoryId       String
+  category         Category  @relation(fields: [categoryId], references: [id])
+  subCategoryId    String?
+  subCategory      SubCategory? @relation(fields: [subCategoryId], references: [id])
+  specifications   Json?     
+  isFeatured       Boolean   @default(false)
+  isActive         Boolean   @default(true)
+  inquiries        Inquiry[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Inquiry {
+  id          String        @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  country     String?
+  message     String        @db.Text
+  productId   String?
+  product     Product?      @relation(fields: [productId], references: [id])
+  status      InquiryStatus @default(NEW)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+enum InquiryStatus {
+  NEW
+  READ
+  REPLIED
+  CLOSED
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  country   String?
+  content   String   @db.Text
+  rating    Int      @default(5)
+  image     String?
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Certification {
+  id          String   @id @default(cuid())
+  name        String
+  image       String
+  description String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  image     String
+  caption   String?
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model CompanyInfo {
+  id          String  @id @default("singleton")
+  about       String  @db.Text
+  mission     String? @db.Text
+  vision      String? @db.Text
+  history     String? @db.Text
+  address     String?
+  phone       String?
+  email       String?
+  socialLinks Json?   
+  updatedAt   DateTime @updatedAt
+}
+
+model PageSEO {
+  id          String  @id @default(cuid())
+  page        String  @unique 
+  title       String?
+  description String?
+  keywords    String?
+  ogImage     String?
+  updatedAt   DateTime @updatedAt
 }
