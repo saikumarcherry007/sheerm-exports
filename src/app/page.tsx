@@ -3,6 +3,7 @@ import Image from "next/image"
 import { ArrowRight, Globe, ShieldCheck, Truck, Zap, Users, Award, Apple, Flame, Cookie, Shirt, Briefcase, CircleDot, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import HeroBackground from "@/components/home/HeroBackground"
+import ScrollToSectionButton from "@/components/home/ScrollToSectionButton"
 
 const categories = [
   { name: "Fruits & Vegetables", slug: "fruits-vegetables", icon: Apple, image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=2070&auto=format&fit=crop" },
@@ -22,7 +23,7 @@ export default function Home() {
         <HeroBackground />
 
         <div className="container mx-auto px-4 relative z-10 text-center text-white">
-                    <h1 className="animate-reveal-up text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-white">
+          <h1 className="animate-reveal-up text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-white">
             Premium Indian Exports,{" "}
             <br className="hidden sm:block" />
             <span className="text-[#c5a059] italic">Delivered Worldwide</span>
@@ -42,12 +43,75 @@ export default function Home() {
               <Link href="/request-quote">Request Quote</Link>
             </Button>
           </div>
+
+          <ScrollToSectionButton targetId="certifications">
+            Certifications
+          </ScrollToSectionButton>
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
           <div className="w-0.5 h-14 rounded-full bg-gradient-to-b from-[#c5a059] to-transparent animate-bounce" />
         </div>
       </section>
+
+      {/* Certifications */}
+      <section id="certifications" className="py-16 bg-gradient-to-b from-[#0c050a] to-[#1a0a0d] overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-[#c5a059] text-sm font-semibold uppercase tracking-widest mb-2">Trusted &amp; Verified</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">Certifications &amp; Affiliations</h2>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0c050a] to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#1a0a0d] to-transparent pointer-events-none z-10" />
+
+          <div className="cert-track flex w-max gap-8 py-4">
+            {[...Array(2)].map((_, setIdx) =>
+              [
+                { name: "DGFT", src: "/DGFT.png" },
+                { name: "APEDA", src: "/APEDA.png" },
+                { name: "MSME", src: "/MSME.png" },
+                { name: "FIEO", src: "/FIEO.png" },
+                { name: "FICCI", src: "/FICICI.png" },
+                { name: "GCCI", src: "/GCCI.png" },
+                { name: "UDYOG AADHAR", src: "/UDYOG AADHAR.png" },
+                { name: "GST", src: "/GST.png" },
+                { name: "FDA", src: "/FDA.png" },
+                { name: "SPICE BOARD", src: "/SPICE BOARD.png" },
+                { name: "HALAL", src: "/HALAL.png" },
+                { name: "GMP", src: "/GMP.png" },
+              ].map((cert, i) => (
+                <div
+                  key={`${setIdx}-${i}`}
+                  className="group flex-shrink-0 w-44 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#c5a059]/30 hover:bg-white/[0.07] hover:shadow-[0_0_24px_rgba(197,160,89,0.08)]"
+                >
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-white/90 p-2 shadow-sm">
+                    <div className="relative h-full w-full">
+                      <Image src={cert.src} alt={cert.name} fill className="object-contain" sizes="40px" />
+                    </div>
+                  </div>
+                  <p className="mt-3 text-center text-xs font-medium tracking-wide text-slate-400 group-hover:text-[#c5a059] transition-colors duration-300">{cert.name}</p>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </section>
+
+      <style>{`
+        @keyframes cert-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .cert-track {
+          animation: cert-scroll 30s linear infinite;
+        }
+        .cert-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
 
       {/* About Preview */}
       <section className="py-24 bg-white">
@@ -204,6 +268,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </div>
   )
 }
