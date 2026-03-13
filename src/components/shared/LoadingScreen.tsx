@@ -22,26 +22,49 @@ export default function LoadingScreen() {
 
   if (!isMounted) return null
 
+  const brandText = "SHREEM EXPORTS"
+
   return (
     <>
       <style>{`
-        .truck-wrapper{width:200px;height:100px;display:flex;flex-direction:column;position:relative;align-items:center;justify-content:flex-end;overflow:hidden}
-        .truck-body{width:130px;margin-bottom:6px;animation:truck-bounce 1s linear infinite}
+        .truck-wrapper{width:200px;height:100px;display:flex;flex-direction:column;position:relative;align-items:center;justify-content:flex-end;overflow:hidden;will-change:transform}
+        .truck-body{width:130px;margin-bottom:6px;animation:truck-bounce 1s linear infinite;will-change:transform}
         .truck-body svg{display:block;width:130px;height:auto}
         @keyframes truck-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
         .truck-tires{width:130px;display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 15px;position:absolute;bottom:0}
-        .truck-tires svg{display:block;width:24px;height:24px;animation:tire-spin .6s linear infinite}
+        .truck-tires svg{display:block;width:24px;height:24px;animation:tire-spin .6s linear infinite;will-change:transform}
         @keyframes tire-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
         .truck-road{width:100%;height:1.5px;background:#c5a059;position:relative;bottom:0;align-self:flex-end;border-radius:3px}
-        .truck-road::before{content:"";position:absolute;width:20px;height:100%;background:#c5a059;right:-50%;border-radius:3px;animation:road-move 1.4s linear infinite;border-left:10px solid #2a0508}
-        .truck-road::after{content:"";position:absolute;width:10px;height:100%;background:#c5a059;right:-65%;border-radius:3px;animation:road-move 1.4s linear infinite;border-left:4px solid #2a0508}
-        .truck-lamp{position:absolute;bottom:0;right:-90%;height:90px;width:auto;animation:road-move 1.4s linear infinite}
-        @keyframes road-move{0%{transform:translateX(0)}100%{transform:translateX(-350px)}}
+        .truck-road::before{content:"";position:absolute;width:20px;height:100%;background:#c5a059;right:-50%;border-radius:3px;animation:road-move 1.4s linear infinite;border-left:10px solid #2a0508;will-change:transform}
+        .truck-road::after{content:"";position:absolute;width:10px;height:100%;background:#c5a059;right:-65%;border-radius:3px;animation:road-move 1.4s linear infinite;border-left:4px solid #2a0508;will-change:transform}
+        .truck-lamp{position:absolute;bottom:0;right:-90%;height:90px;width:auto;animation:road-move 1.4s linear infinite;will-change:transform}
+        @keyframes road-move{0%{transform:translate3d(0, 0, 0)}100%{transform:translate3d(-350px, 0, 0)}}
+        .brand-text-container {
+          display: flex;
+          gap: 0.15em;
+          margin-top: 1.5rem;
+        }
+        .brand-char {
+          display: inline-block;
+          color: #c5a059;
+          font-family: ui-serif, Georgia, serif;
+          font-weight: 700;
+          font-size: 1.125rem;
+          letter-spacing: 0.2em;
+          opacity: 0;
+          transform: translateY(10px);
+          animation: char-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          will-change: transform, opacity;
+        }
+        @keyframes char-reveal {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       `}</style>
       <div
-        className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#2a0508] transition-opacity duration-700 overflow-hidden ${
-          isFading ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+        className={"fixed inset-0 z-[100] flex items-center justify-center bg-[#2a0508] transition-opacity duration-700 overflow-hidden " + (isFading ? "opacity-0 pointer-events-none" : "opacity-100")}
       >
         <div className="flex flex-col items-center">
           <div className="truck-wrapper">
@@ -71,9 +94,17 @@ export default function LoadingScreen() {
               <path d="M252.882,0c-37.781,0-68.686,29.953-70.245,67.358h-6.917v8.954c-26.109,2.163-45.463,10.011-45.463,19.366h9.993c-1.65,5.146-2.507,10.54-2.507,16.017c0,28.956,23.558,52.514,52.514,52.514c28.956,0,52.514-23.558,52.514-52.514c0-5.478-0.856-10.872-2.506-16.017h9.992c0-9.354-19.352-17.204-45.463-19.366v-8.954h-6.149C200.189,38.779,223.924,16,252.882,16c29.952,0,54.32,24.368,54.32,54.32c0,28.774-11.078,37.009-25.105,47.437c-17.444,12.968-37.216,27.667-37.216,78.884v113.914h-0.797c-5.068,0-9.174,4.108-9.174,9.177c0,2.844,1.293,5.383,3.321,7.066c-3.432,27.933-26.851,95.744-8.226,115.459v11.202h45.75v-11.202c18.625-19.715-4.794-87.527-8.227-115.459c2.029-1.683,3.322-4.223,3.322-7.066c0-5.068-4.107-9.177-9.176-9.177h-0.795V196.641c0-43.174,14.942-54.283,30.762-66.043c14.793-10.997,31.559-23.461,31.559-60.277C323.202,31.545,291.656,0,252.882,0z M232.77,111.694c0,23.442-19.071,42.514-42.514,42.514c-23.442,0-42.514-19.072-42.514-42.514c0-5.531,1.078-10.957,3.141-16.017h78.747C231.693,100.736,232.77,106.162,232.77,111.694z" />
             </svg>
           </div>
-          <p className="text-[#c5a059] font-serif font-bold text-lg tracking-widest mt-6 animate-pulse">
-            SHREEM EXPORTS
-          </p>
+          <div className="brand-text-container">
+            {brandText.split("").map((char, i) => (
+              <span
+                key={i}
+                className="brand-char"
+                style={{ animationDelay: (i * 0.05 + 0.2).toFixed(2) + "s" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </>
