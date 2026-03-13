@@ -47,9 +47,9 @@ export default function Footer() {
             <Image
               src="/shreem-logo.png"
               alt="Shreem Exports"
-              width={44}
-              height={44}
-              className="h-11 w-11 object-contain brightness-0 invert"
+              width={64}
+              height={64}
+              className="h-16 w-16 object-contain brightness-0 invert"
             />
             <div className="flex flex-col">
               <span className="text-white font-serif font-bold text-lg tracking-wide">Shreem Exports</span>
@@ -115,9 +115,18 @@ export default function Footer() {
         <p className="text-slate-200 text-xs text-center md:text-left">
           &copy; {new Date().getFullYear()} Shreem Exports Private Limited. All Rights Reserved.
         </p>
-        <p className="text-slate-200 text-xs text-center">
-          Made by Tulasikalaarts
-        </p>
+        <div className="flex items-center justify-center gap-6">
+          <p className="text-slate-200 text-xs">
+            Made by
+          </p>
+          <Image 
+            src="/TKA_footer.png" 
+            alt="Tulasikala Arts" 
+            width={250} 
+            height={80} 
+            className="h-16 w-auto object-contain scale-125"
+          />
+        </div>
         <div className="flex items-center justify-center md:justify-end gap-6 text-xs text-slate-200">
           <Link href="/privacy" className="hover:text-[#c5a059] transition-colors">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-[#c5a059] transition-colors">Terms of Service</Link>

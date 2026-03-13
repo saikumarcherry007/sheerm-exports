@@ -149,7 +149,7 @@ export default function Home() {
 
             <div className="lg:w-1/2 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop"
+                src="/road ways.webp"
                 alt="Our Products"
                 fill
                 className="object-cover"
