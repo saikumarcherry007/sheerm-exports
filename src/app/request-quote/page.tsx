@@ -58,10 +58,10 @@ export default function RequestQuotePage() {
               <div>
                 <label className="text-sm font-medium text-slate-700 mb-1 block">Product Category *</label>
                 <Select>
-                  <SelectTrigger className="bg-[#fef9f0] border-slate-200 focus:border-[#c5a059] focus:ring-[#c5a059]">
+                  <SelectTrigger className="w-full bg-[#fef9f0] border-slate-200 focus:border-[#c5a059] focus:ring-[#c5a059]">
                     <SelectValue placeholder="Select a category" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent position="popper" align="start">
                     {productCategories.map((cat) => (
                       <SelectItem key={cat} value={cat}>{cat}</SelectItem>
                     ))}

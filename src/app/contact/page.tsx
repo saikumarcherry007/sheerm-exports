@@ -96,7 +96,7 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#6e0b14] px-6 py-3 text-sm font-semibold text-white shadow-xl transition hover:bg-[#7f0d1b] focus:outline-none focus:ring-2 focus:ring-[#c5a059]/60 md:w-auto"
+                      className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#6e0b14] px-6 py-3 text-sm font-semibold text-white shadow-xl transition hover:bg-[#7f0d1b] focus:outline-none focus:ring-2 focus:ring-[#c5a059]/60 md:w-auto mt-6"
                     >
                       {status === "sent" ? "Message Sent" : "Send Message"}
                       <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
