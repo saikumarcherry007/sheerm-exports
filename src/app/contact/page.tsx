@@ -2,10 +2,17 @@
 
 import React, { useState } from "react"
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react"
+import { Lato } from "next/font/google"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb"
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+})
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "sent">("idle")
@@ -20,9 +27,9 @@ export default function ContactPage() {
   }
 
   const contactItems = [
-    { icon: MapPin, label: "Address", value: "Hyderabad, Telangana, India" },
+    { icon: MapPin, label: "Address", value: "6-10-62, Vinayak Nagar, HAL, Hyderabad, Telangana - 500042" },
     { icon: Mail, label: "Email", value: "info@shreemexports.com" },
-    { icon: Phone, label: "Phone", value: "+91 XXXXX XXXXX" },
+    { icon: Phone, label: "Phone", value: "+91 90107 10914 | +91 94946 62503" },
     { icon: Clock, label: "Working Hours", value: "Mon – Sat, 9 AM – 6 PM IST" },
   ]
 
@@ -124,7 +131,13 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <p className="text-xs font-semibold uppercase tracking-wide text-slate-200/70">{item.label}</p>
-                            <p className="mt-1 text-base font-semibold text-white">{item.value}</p>
+                            <p
+                            className={`mt-1 text-base font-semibold text-white ${
+                              (item.label === "Address" || item.label === "Phone") && lato.className
+                            }`}
+                          >
+                            {item.value}
+                          </p>
                           </div>
                         </div>
                       ))}
@@ -135,11 +148,11 @@ export default function ContactPage() {
                     <p className="text-sm font-semibold uppercase tracking-wide text-slate-200/80">Location</p>
                     <div className="mt-4 h-44 w-full overflow-hidden rounded-2xl border border-white/10">
                       <iframe
-                        className="h-full w-full"
-                        title="Shreem Exports Location"
-                        loading="lazy"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.41935118948!2d78.48668047456418!3d17.451786688039588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9398f5b4c6d1%3A0x991e6d28b497a55!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1683204427891!5m2!1sen!2sus"
-                      />
+                      className="h-full w-full"
+                      title="Shreem Exports Location"
+                      loading="lazy"
+                      src="https://maps.google.com/maps?q=6-10-62%2C%20Vinayak%20Nagar%2C%20HAL%2C%20Hyderabad%2C%20Telangana%20500042&z=17&output=embed"
+                    />
                     </div>
                     <p className="mt-3 text-sm text-slate-200/80">Visit our office during business hours or reach out via email / phone.</p>
                   </div>
