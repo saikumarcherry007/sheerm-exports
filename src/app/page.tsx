@@ -3,7 +3,6 @@ import Image from "next/image"
 import { ArrowRight, Globe, ShieldCheck, Truck, Zap, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import HeroBackground from "@/components/home/HeroBackground"
-import ScrollToSectionButton from "@/components/home/ScrollToSectionButton"
 import { categories } from "@/data/products"
 
 export default function Home() {
@@ -34,10 +33,6 @@ export default function Home() {
               <Link href="/request-quote">Request Quote</Link>
             </Button>
           </div>
-
-          <ScrollToSectionButton targetId="certifications">
-            Certifications
-          </ScrollToSectionButton>
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">

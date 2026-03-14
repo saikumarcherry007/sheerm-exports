@@ -14,7 +14,7 @@ export default function ProductsPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#6e0b14]">Our Products</h1>
             <div className="w-20 h-1 bg-[#c5a059] mx-auto mb-6" />
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Explore our diverse range of premium Indian exports, sourced with care and delivered with excellence.
+              Explore our diverse range of premium Indian exports, including GI-tagged specialties and fully customizable product offerings, all sourced with care and delivered with excellence.
             </p>
           </div>
 
