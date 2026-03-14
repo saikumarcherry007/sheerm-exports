@@ -1,6 +1,6 @@
-import Image from "next/image"
 import { ShieldCheck, Truck, Zap, Globe, Users, Award } from "lucide-react"
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb"
+import GlobalReachMap from "@/components/home/GlobalReachMap"
 
 export default function AboutPage() {
   return (
@@ -17,9 +17,8 @@ export default function AboutPage() {
 
           {/* Company story */}
           <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
-            <div className="lg:w-1/2 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
-              <Image src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop" alt="Shreem Exports" fill className="object-cover" />
-              <div className="absolute inset-0 border-2 border-[#c5a059]/20 rounded-2xl" />
+            <div className="lg:w-1/2 w-full rounded-2xl overflow-hidden shadow-2xl">
+              <GlobalReachMap />
             </div>
             <div className="lg:w-1/2 space-y-6">
               <h2 className="text-3xl font-bold text-[#6e0b14] italic">&ldquo;The Best of Bharat to the World&rdquo;</h2>

@@ -1,10 +1,18 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const WorldMap = dynamic(
   () => import("@/components/ui/map").then((mod) => ({ default: mod.WorldMap })),
-  { ssr: false }
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-full w-full flex items-center justify-center">
+        <Skeleton className="h-[360px] w-full rounded-xl" />
+      </div>
+    ),
+  }
 );
 
 export default function GlobalReachMap() {
