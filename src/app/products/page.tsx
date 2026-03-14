@@ -1,58 +1,7 @@
 import Link from "next/link"
-import { Apple, Flame, Cookie, Shirt, Briefcase, CircleDot, Package, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb"
-
-const categories = [
-  {
-    name: "Fresh Fruits & Vegetables",
-    slug: "fruits-vegetables",
-    description: "Premium Indian produce — mangoes, pomegranates, bananas, okra, green chillies, and more — sourced directly from farms.",
-    icon: Apple,
-    image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Spices & Seasonings",
-    slug: "spices",
-    description: "Authentic Indian spices — turmeric, cumin, cardamom, black pepper, red chillies — with bold aroma and flavour.",
-    icon: Flame,
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Dry Fruits & Nuts",
-    slug: "dry-fruits",
-    description: "Hand-picked cashews, almonds, raisins, pistachios, and walnuts — carefully graded and packed for export.",
-    icon: Cookie,
-    image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Textiles & Fabrics",
-    slug: "textiles",
-    description: "Handloom silks, cotton textiles, and premium fabrics that showcase India's rich weaving heritage.",
-    icon: Shirt,
-    image: "https://images.unsplash.com/photo-1558171813-4c088753af8f?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Handicrafts & Artisan Goods",
-    slug: "handicrafts",
-    description: "Exquisite hand-crafted décor, pottery, metalwork, and art pieces celebrating Indian craftsmanship.",
-    icon: Briefcase,
-    image: "https://images.unsplash.com/photo-1604076913837-52ab5f3e1bdc?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Grains & Millets",
-    slug: "grains",
-    description: "Premium basmati rice, millets, and pulses — the staple grains of India, now available worldwide.",
-    icon: CircleDot,
-    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Packaging Products",
-    slug: "packaging",
-    description: "Food-grade and industrial packaging solutions including pouches, cartons, and custom printed materials.",
-    icon: Package,
-    image: "https://images.unsplash.com/photo-1605187813954-e88c3ad2d06f?q=80&w=2070&auto=format&fit=crop",
-  },
-]
+import { categories } from "@/data/products"
 
 export default function ProductsPage() {
   return (

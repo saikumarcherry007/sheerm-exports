@@ -21,7 +21,7 @@ export const categories = [
       {
         name: "Premium Pomegranates",
         description: "Deep red, juicy seeds with a sweet-tart flavour. Sourced from the best orchards in India.",
-        image: "https://images.unsplash.com/photo-1615484477778-ca3b77942c25?q=80&w=2070&auto=format&fit=crop",
+        image: "/products/premium-pomegranates.jpeg",
         origin: "Solapur, Maharashtra",
         packaging: "4kg, 5kg Cartons",
       },
@@ -47,7 +47,7 @@ export const categories = [
       {
         name: "Turmeric Powder (High Curcumin)",
         description: "Pure, vibrant yellow turmeric with high curcumin content for medicinal and culinary use.",
-        image: "https://images.unsplash.com/photo-1615485243306-056340326127?q=80&w=2070&auto=format&fit=crop",
+        image: "/products/turmeric-powder-high-curcumin.jpeg",
         origin: "Nizamabad, Telangana",
         isGI: true,
         giTag: "Nizamabad Turmeric",
@@ -56,7 +56,7 @@ export const categories = [
       {
         name: "Green Cardamom",
         description: "Aromatic 8mm+ 'Bold' green cardamom pods with intense fragrance and sweet flavour.",
-        image: "https://images.unsplash.com/photo-1599147782282-965df7775dd1?q=80&w=2070&auto=format&fit=crop",
+        image: "/products/green-cardamom.jpeg",
         origin: "Idukki, Kerala",
         isGI: true,
         giTag: "Alleppey Green Cardamom",
@@ -75,7 +75,7 @@ export const categories = [
       {
         name: "Premium Cashew Nuts (W180)",
         description: "Large, white, whole cashew nuts — the highest grade available for premium snacks.",
-        image: "https://images.unsplash.com/photo-1536591040356-83679058b8f2?q=80&w=2070&auto=format&fit=crop",
+        image: "/products/premium-cashew-nuts-w180.jpeg",
         origin: "Mangalore, Karnataka",
         packaging: "10kg tins",
       },
@@ -86,8 +86,8 @@ export const categories = [
     slug: "textiles",
     description: "Handloom silks, cotton textiles, and premium fabrics that showcase India's rich weaving heritage.",
     icon: Shirt,
-    image: "https://images.unsplash.com/photo-1618220179428-22790b42185b?q=80&w=2070&auto=format&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1618220179428-22790b42185b?q=80&w=2070&auto=format&fit=crop",
+    image: "/products/textiles-fabrics.webp",
+    heroImage: "/products/textiles-fabrics.webp",
     products: [],
   },
   {
@@ -95,8 +95,8 @@ export const categories = [
     slug: "handicrafts",
     description: "Exquisite hand-crafted décor, pottery, metalwork, and art pieces celebrating Indian craftsmanship.",
     icon: Briefcase,
-    image: "https://images.unsplash.com/photo-1590422114751-285b7968536f?q=80&w=2070&auto=format&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1590422114751-285b7968536f?q=80&w=2070&auto=format&fit=crop",
+    image: "/products/handicrafts-artisan-goods.webp",
+    heroImage: "/products/handicrafts-artisan-goods.webp",
     products: [],
   },
   {
@@ -104,8 +104,8 @@ export const categories = [
     slug: "grains",
     description: "Premium basmati rice, millets, and pulses — the staple grains of India, now available worldwide.",
     icon: CircleDot,
-    image: "https://images.unsplash.com/photo-1590234473859-9941a5ca4482?q=80&w=2070&auto=format&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1590234473859-9941a5ca4482?q=80&w=2070&auto=format&fit=crop",
+    image: "/products/grains-millets.webp",
+    heroImage: "/products/grains-millets.webp",
     products: [],
   },
   {
@@ -113,8 +113,8 @@ export const categories = [
     slug: "packaging",
     description: "Food-grade and industrial packaging solutions including pouches, cartons, and custom printed materials.",
     icon: Package,
-    image: "https://images.unsplash.com/photo-1589365278144-c9e705f843ba?q=80&w=2070&auto=format&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1589365278144-c9e705f843ba?q=80&w=2070&auto=format&fit=crop",
+    image: "/products/packaging-products.jpeg",
+    heroImage: "/products/packaging-products.jpeg",
     products: [],
   },
 ]

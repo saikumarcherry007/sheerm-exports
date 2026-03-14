@@ -70,18 +70,18 @@ export default function Home() {
           <div className="cert-track flex w-max gap-8 py-4">
             {[...Array(2)].map((_, setIdx) =>
               [
-                { name: "DGFT", src: "/DGFT.png" },
-                { name: "APEDA", src: "/APEDA.png" },
-                { name: "MSME", src: "/MSME.png" },
-                { name: "FIEO", src: "/FIEO.png" },
-                { name: "FICCI", src: "/FICICI.png" },
-                { name: "GCCI", src: "/GCCI.png" },
-                { name: "UDYOG AADHAR", src: "/UDYOG AADHAR.png" },
-                { name: "GST", src: "/GST.png" },
-                { name: "FDA", src: "/FDA.png" },
-                { name: "SPICE BOARD", src: "/SPICE BOARD.png" },
-                { name: "HALAL", src: "/HALAL.png" },
-                { name: "GMP", src: "/GMP.png" },
+                { name: "DGFT", src: "/certifications/DGFT.png" },
+                { name: "APEDA", src: "/certifications/APEDA.png" },
+                { name: "MSME", src: "/certifications/MSME.png" },
+                { name: "FIEO", src: "/certifications/FIEO.png" },
+                { name: "FICCI", src: "/certifications/FICICI.png" },
+                { name: "GCCI", src: "/certifications/GCCI.png" },
+                { name: "UDYOG AADHAR", src: "/certifications/UDYOG AADHAR.png" },
+                { name: "GST", src: "/certifications/GST.png" },
+                { name: "FDA", src: "/certifications/FDA.png" },
+                { name: "SPICE BOARD", src: "/certifications/SPICE BOARD.png" },
+                { name: "HALAL", src: "/certifications/HALAL.png" },
+                { name: "GMP", src: "/certifications/GMP.png" },
               ].map((cert, i) => (
                 <div
                   key={`${setIdx}-${i}`}
@@ -149,7 +149,7 @@ export default function Home() {
 
             <div className="lg:w-1/2 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/road ways.webp"
+                src="/hero/road_ways.webp"
                 alt="Our Products"
                 fill
                 className="object-cover"

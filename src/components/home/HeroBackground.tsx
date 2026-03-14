@@ -4,9 +4,9 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 
 const images = [
-  "/air_ways.webp",
-  "/road ways.webp",
-  "/water ways.webp",
+  "/hero/air_ways.webp",
+  "/hero/road_ways.webp",
+  "/hero/water_ways.webp",
 ]
 
 export default function HeroBackground() {
