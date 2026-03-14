@@ -65,7 +65,7 @@ export default function Home() {
                 { name: "APEDA", src: "/certifications/APEDA.png" },
                 { name: "MSME", src: "/certifications/MSME.png" },
                 { name: "FIEO", src: "/certifications/FIEO.png" },
-                { name: "FICCI", src: "/certifications/FICICI.png" },
+                { name: "FICCI", src: "/certifications/FICCI.png" },
                 { name: "GCCI", src: "/certifications/GCCI.png" },
                 { name: "UDYOG AADHAR", src: "/certifications/UDYOG AADHAR.png" },
                 { name: "GST", src: "/certifications/GST.png" },
@@ -76,14 +76,17 @@ export default function Home() {
               ].map((cert, i) => (
                 <div
                   key={`${setIdx}-${i}`}
-                  className="group flex-shrink-0 w-44 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#c5a059]/30 hover:bg-white/[0.07] hover:shadow-[0_0_24px_rgba(197,160,89,0.08)]"
+                  className="group flex-shrink-0 w-48 flex items-center justify-center p-6"
                 >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-white/90 p-2 shadow-sm">
-                    <div className="relative h-full w-full">
-                      <Image src={cert.src} alt={cert.name} fill className="object-contain" sizes="40px" />
-                    </div>
+                  <div className="relative h-24 w-40 transition-transform duration-300 group-hover:scale-110">
+                    <Image 
+                      src={cert.src} 
+                      alt={cert.name} 
+                      fill 
+                      className="object-contain" 
+                      sizes="160px" 
+                    />
                   </div>
-                  <p className="mt-3 text-center text-xs font-medium tracking-wide text-slate-400 group-hover:text-[#c5a059] transition-colors duration-300">{cert.name}</p>
                 </div>
               ))
             )}
