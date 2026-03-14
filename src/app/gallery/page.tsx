@@ -3,15 +3,14 @@ import { Camera } from "lucide-react"
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb"
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=800&auto=format&fit=crop", alt: "Fresh fruits ready for export" },
-  { src: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop", alt: "Premium Indian spices" },
-  { src: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=800&auto=format&fit=crop", alt: "Dry fruits and nuts selection" },
-  { src: "https://images.unsplash.com/photo-1558171813-4c088753af8f?q=80&w=800&auto=format&fit=crop", alt: "Indian textiles and fabrics" },
-  { src: "https://images.unsplash.com/photo-1604076913837-52ab5f3e1bdc?q=80&w=800&auto=format&fit=crop", alt: "Handcrafted artisan goods" },
-  { src: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800&auto=format&fit=crop", alt: "Grains and millets" },
-  { src: "https://images.unsplash.com/photo-1605187813954-e88c3ad2d06f?q=80&w=800&auto=format&fit=crop", alt: "Packaging solutions" },
-  { src: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop", alt: "Quality inspection process" },
-  { src: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?q=80&w=800&auto=format&fit=crop", alt: "Warehouse operations" },
+  { src: "/products/premium-pomegranates.jpeg", alt: "Premium Pomegranates" },
+  { src: "/products/green-cardamom.jpeg", alt: "Green Cardamom" },
+  { src: "/products/turmeric-powder-high-curcumin.jpeg", alt: "High Curcumin Turmeric Powder" },
+  { src: "/products/premium-cashew-nuts-w180.jpeg", alt: "Premium Cashew Nuts" },
+  { src: "/products/grains-millets.webp", alt: "Grains & Millets" },
+  { src: "/products/textiles-fabrics.webp", alt: "Textiles & Fabrics" },
+  { src: "/products/handicrafts-artisan-goods.webp", alt: "Handicraft Artisan Goods" },
+  { src: "/products/packaging-products.jpeg", alt: "Packaging Products" },
 ]
 
 export default function GalleryPage() {

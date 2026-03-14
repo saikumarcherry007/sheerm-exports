@@ -1,9 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Globe, ShieldCheck, Truck, Zap, Users, Award } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import HeroBackground from "@/components/home/HeroBackground"
 import GlobalReachMap from "@/components/home/GlobalReachMap"
+import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects"
 import { categories } from "@/data/products"
 
 export default function Home() {
@@ -224,25 +225,11 @@ export default function Home() {
             <div className="w-20 h-1 bg-[#c5a059] mx-auto mb-6" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 stagger-children">
-            {[
-              { title: "Premium Quality", desc: "Rigorous quality checks at every stage, from sourcing to shipping.", icon: ShieldCheck },
-              { title: "Global Reach", desc: "Robust logistics network ensuring timely delivery across continents.", icon: Globe },
-              { title: "Efficient Sourcing", desc: "Direct partnerships with growers for competitive pricing & freshness.", icon: Zap },
-              { title: "Timely Delivery", desc: "We prioritize your deadlines with optimized shipping routes.", icon: Truck },
-              { title: "Customer Centric", desc: "Transparent communication and dedicated support for every client.", icon: Users },
-              { title: "Certified Excellence", desc: "Adherence to international export standards and certifications.", icon: Award },
-            ].map((feature, i) => (
-              <div key={i} className="flex gap-5 group p-4 rounded-xl hover:bg-[#fef9f0] transition-colors duration-300">
-                <div className="h-14 w-14 rounded-xl bg-[#6e0b14]/5 flex items-center justify-center shrink-0 group-hover:bg-[#6e0b14] transition-colors duration-300">
-                  <feature.icon className="h-7 w-7 text-[#6e0b14] group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-[#6e0b14]">{feature.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{feature.desc}</p>
-                </div>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-[#6e0b14] via-transparent to-[#6e0b14]" />
+            <div className="relative">
+              <FeaturesSectionWithHoverEffects />
+            </div>
           </div>
         </div>
       </section>
