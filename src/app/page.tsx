@@ -3,6 +3,7 @@ import Image from "next/image"
 import { ArrowRight, Globe, ShieldCheck, Truck, Zap, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import HeroBackground from "@/components/home/HeroBackground"
+import GlobalReachMap from "@/components/home/GlobalReachMap"
 import { categories } from "@/data/products"
 
 export default function Home() {
@@ -146,6 +147,21 @@ export default function Home() {
               <div className="absolute inset-0 border-2 border-[#c5a059]/20 rounded-2xl" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Global Reach Map */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#6e0b14]">Global Reach</h2>
+          <div className="w-20 h-1 bg-[#c5a059] mx-auto mb-6" />
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            See how our network spans continents — customize routes, track shipments, and visualize partner hubs.
+          </p>
+        </div>
+
+        <div className="container mx-auto px-4">
+          <GlobalReachMap />
         </div>
       </section>
 

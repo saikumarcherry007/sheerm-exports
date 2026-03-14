@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import LoadingScreen from "@/components/shared/LoadingScreen"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { ThemeProvider } from "next-themes"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,18 +27,20 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${playfair.className} antialiased bg-white text-slate-900 overflow-x-hidden`}
       >
-        <TooltipProvider>
-          <LoadingScreen />
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </TooltipProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TooltipProvider>
+            <LoadingScreen />
+            <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
