@@ -1,19 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Globe, ShieldCheck, Truck, Zap, Users, Award, Apple, Flame, Cookie, Shirt, Briefcase, CircleDot, Package } from "lucide-react"
+import { ArrowRight, Globe, ShieldCheck, Truck, Zap, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import HeroBackground from "@/components/home/HeroBackground"
 import ScrollToSectionButton from "@/components/home/ScrollToSectionButton"
-
-const categories = [
-  { name: "Fruits & Vegetables", slug: "fruits-vegetables", icon: Apple, image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Spices & Herbs", slug: "spices", icon: Flame, image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Namkeen & Snacks", slug: "dry-fruits", icon: Cookie, image: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Garments", slug: "textiles", icon: Shirt, image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Leather Products", slug: "handicrafts", icon: Briefcase, image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Copper Products", slug: "grains", icon: CircleDot, image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Packaging Products", slug: "packaging", icon: Package, image: "https://images.unsplash.com/photo-1605187813954-e88c3ad2d06f?q=80&w=2070&auto=format&fit=crop" },
-]
+import { categories } from "@/data/products"
 
 export default function Home() {
   return (
